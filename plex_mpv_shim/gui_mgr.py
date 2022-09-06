@@ -1,4 +1,3 @@
-from pystray import Icon, MenuItem, Menu
 from PIL import Image
 from collections import deque
 import tkinter as tk
@@ -221,6 +220,8 @@ class STrayProcess(Process):
         Process.__init__(self)
 
     def run(self):
+        from pystray import Icon, MenuItem, Menu
+
         def get_wrapper(command):
             def wrapper():
                 self.r_queue.put((command, None))
